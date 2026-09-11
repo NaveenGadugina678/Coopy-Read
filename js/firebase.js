@@ -16,12 +16,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCEVBrehaW1afPsK2IN3ndiRNZ5XUvfQIY",
+  authDomain: "coopy-read.firebaseapp.com",
+  projectId: "coopy-read",
+  storageBucket: "coopy-read.firebasestorage.app",
+  messagingSenderId: "1076871159879",
+  appId: "1:1076871159879:web:9c28d7a26f5298a6145162",
+  measurementId: "G-8V56SL731G"
 };
 
 const isConfigured = Object.values(firebaseConfig).every(
