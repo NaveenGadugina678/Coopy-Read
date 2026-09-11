@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#E0FBFC">
+  <meta name="description" content="Coopy Read — stories worth swiping for.">
+  <title>Coopy Read — Stories worth swiping for.</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="discover">
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Coopy Read home">
+      <img src="assets/logo.png" alt="Coopy Read">
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="profile.html" data-nav="profile">Profile</a>
+      <a href="write.html" data-nav="write">Write</a>
+      <a href="saved.html" data-nav="saved">Saved</a>
+    </nav>
+    <div class="top-actions">
+      <span id="auth-chip" class="auth-chip">Demo mode</span>
+      <button id="auth-action" class="button button-small button-outline" type="button">Log in</button>
+    </div>
+  </header>
+
+  <main class="discover-page">
+    <section class="discover-intro" aria-labelledby="discover-heading">
+      <div>
+        <p class="eyebrow">COOPY READ · DISCOVER</p>
+        <h1 id="discover-heading">Stories worth<br><em>swiping for.</em></h1>
+        <p class="lede">Tiny worlds written by real people. Read one, trust your gut, move on.</p>
+      </div>
+      <div class="discover-tip">
+        <span class="tip-dot"></span>
+        <span>Drag a card, or use the buttons.</span>
+      </div>
+    </section>
+
+    <section class="reader-shell" aria-label="Story discovery">
+      <div id="story-status" class="story-status" aria-live="polite">Here's something new.</div>
+      <div id="story-stack" class="story-stack">
+        <div class="loading-card" aria-busy="true">
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line short"></div>
+          <div class="skeleton skeleton-body"></div>
+        </div>
+      </div>
+
+      <div class="swipe-controls" aria-label="Story controls">
+        <button id="skip-btn" class="round-action skip-action" type="button" aria-label="Skip this story" title="Skip story">←</button>
+        <button id="save-btn" class="save-action" type="button" aria-label="Save this story">
+          <span class="save-icon">♡</span><span class="save-label">Save</span>
+        </button>
+        <button id="continue-btn" class="round-action continue-action" type="button" aria-label="Continue to next story" title="Continue">→</button>
+      </div>
+      <p class="gesture-hint">← skip&nbsp;&nbsp; · &nbsp;&nbsp;drag&nbsp;&nbsp; · &nbsp;&nbsp;continue →</p>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Primary navigation">
+    <a href="profile.html" data-nav="profile"><span>○</span><small>Profile</small></a>
+    <a href="write.html" data-nav="write"><span>＋</span><small>Write</small></a>
+    <a href="saved.html" data-nav="saved"><span>♡</span><small>Saved</small></a>
+  </nav>
+
+  <div id="auth-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+    <div class="modal-card auth-modal-card">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <p class="eyebrow">COOPY READ</p>
+      <h2 id="auth-modal-title">Keep your little worlds.</h2>
+      <p>Log in to save stories, write your own, and make your profile yours.</p>
+      <div class="modal-actions">
+        <a class="button button-primary" href="login.html">Log in</a>
+        <a class="button button-soft" href="register.html">Create account</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Write — Coopy Read</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="write">
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="Coopy Read"></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="profile.html" data-nav="profile">Profile</a><a href="write.html" data-nav="write">Write</a><a href="saved.html" data-nav="saved">Saved</a>
+    </nav>
+    <div class="top-actions"><span id="auth-chip" class="auth-chip">Demo mode</span><button id="auth-action" class="button button-small button-outline" type="button">Log in</button></div>
+  </header>
+
+  <main class="content-page write-page">
+    <section class="write-heading">
+      <p class="eyebrow">THE BLANK PAGE</p>
+      <h1>Write something<br><em>worth keeping.</em></h1>
+      <p>Don't overthink it. A small moment can be a whole world.</p>
+    </section>
+
+    <section class="editor-card">
+      <form id="story-form" novalidate>
+        <label class="editor-label">Title<input id="story-title" maxlength="120" required placeholder="The Rain We Didn't Notice"></label>
+        <div class="editor-meta-row">
+          <label class="editor-label">Category
+            <select id="story-category" required>
+              <option value="">Choose one</option><option>Fiction</option><option>Slice of Life</option><option>Mystery</option><option>Romance</option><option>Fantasy</option><option>Horror</option><option>Humor</option><option>Poetry</option>
+            </select>
+          </label>
+          <div class="reading-estimate"><span class="eyebrow">READING TIME</span><strong id="reading-time">1 min read</strong><small id="word-count">0 words</small></div>
+        </div>
+        <label class="editor-label body-label">Story<textarea id="story-body" maxlength="12000" required placeholder="On the third floor, someone always opened their window when it rained..."></textarea></label>
+        <div class="editor-footer"><span id="char-count">0 / 12000</span><div class="editor-actions"><button id="draft-btn" class="button button-soft" type="button">Save draft</button><button id="publish-btn" class="button button-primary" type="submit">Publish story <span>→</span></button></div></div>
+      </form>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Primary navigation">
+    <a href="profile.html" data-nav="profile"><span>○</span><small>Profile</small></a><a href="write.html" data-nav="write"><span>＋</span><small>Write</small></a><a href="saved.html" data-nav="saved"><span>♡</span><small>Saved</small></a>
+  </nav>
+  <script type="module" src="js/write.js"></script>
+</body>
+</html>

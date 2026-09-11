@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Saved — Coopy Read</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="saved">
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="Coopy Read"></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="profile.html" data-nav="profile">Profile</a><a href="write.html" data-nav="write">Write</a><a href="saved.html" data-nav="saved">Saved</a>
+    </nav>
+    <div class="top-actions"><span id="auth-chip" class="auth-chip">Demo mode</span><button id="auth-action" class="button button-small button-outline" type="button">Log in</button></div>
+  </header>
+
+  <main class="content-page saved-page">
+    <section class="saved-heading">
+      <div><p class="eyebrow">YOUR SHELF</p><h1>Stories worth<br><em>keeping.</em></h1><p>Save the ones you want to come back to.</p></div>
+      <a href="index.html" class="button button-primary">Discover stories <span>→</span></a>
+    </section>
+    <div id="saved-list" class="saved-grid"></div>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Primary navigation">
+    <a href="profile.html" data-nav="profile"><span>○</span><small>Profile</small></a><a href="write.html" data-nav="write"><span>＋</span><small>Write</small></a><a href="saved.html" data-nav="saved"><span>♡</span><small>Saved</small></a>
+  </nav>
+  <script type="module" src="js/saved.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Create account — Coopy Read</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="auth">
+  <main class="auth-page">
+    <a class="auth-brand" href="index.html"><img src="assets/logo.png" alt="Coopy Read"></a>
+    <section class="auth-card">
+      <p class="eyebrow">JOIN THE PAGE</p>
+      <h1>Make a little<br>room for stories.</h1>
+      <p class="auth-subtitle">Create your reading identity in under a minute.</p>
+      <div id="auth-error" class="form-message error hidden" role="alert"></div>
+      <form id="register-form" novalidate>
+        <label>Username<input id="username" name="username" type="text" autocomplete="nickname" minlength="2" maxlength="30" required placeholder="e.g. maya_reads"></label>
+        <label>Email<input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Password<input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required placeholder="At least 6 characters"></label>
+        <button class="button button-primary button-full" type="submit">Create account <span>→</span></button>
+      </form>
+      <button id="google-btn" class="button button-outline button-full google-button" type="button">Continue with Google</button>
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

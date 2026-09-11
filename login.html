@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Log in — Coopy Read</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="auth">
+  <main class="auth-page">
+    <a class="auth-brand" href="index.html"><img src="assets/logo.png" alt="Coopy Read"></a>
+    <section class="auth-card">
+      <p class="eyebrow">WELCOME BACK</p>
+      <h1>Pick up where<br>you left off.</h1>
+      <p class="auth-subtitle">Your saved stories are waiting.</p>
+      <div id="auth-error" class="form-message error hidden" role="alert"></div>
+      <form id="login-form" novalidate>
+        <label>Email<input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Password<input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+        <button class="button button-primary button-full" type="submit">Log in <span>→</span></button>
+      </form>
+      <button id="google-btn" class="button button-outline button-full google-button" type="button">Continue with Google</button>
+      <p class="auth-switch">New here? <a href="register.html">Create an account</a></p>
+      <p class="demo-note">No Firebase config? You can still browse the demo on the home page.</p>
+    </section>
+  </main>
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Profile — Coopy Read</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="profile">
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="Coopy Read"></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="profile.html" data-nav="profile">Profile</a><a href="write.html" data-nav="write">Write</a><a href="saved.html" data-nav="saved">Saved</a>
+    </nav>
+    <div class="top-actions"><span id="auth-chip" class="auth-chip">Demo mode</span><button id="auth-action" class="button button-small button-outline" type="button">Log in</button></div>
+  </header>
+
+  <main class="content-page profile-page">
+    <section id="profile-hero" class="profile-hero">
+      <div class="profile-avatar avatar-placeholder">M</div>
+      <div class="profile-copy">
+        <p class="eyebrow">YOUR READING ROOM</p>
+        <h1 id="profile-name">Maya Chen</h1>
+        <p id="profile-bio">Writing tiny stories about ordinary lives.</p>
+        <div class="profile-stats">
+          <span><strong id="story-count">12</strong> stories</span>
+          <span><strong id="saved-count">48</strong> saved</span>
+        </div>
+      </div>
+      <button id="edit-profile-btn" class="button button-outline" type="button">Edit profile</button>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><div><p class="eyebrow">MY STORIES</p><h2>Things I've written.</h2></div><a class="text-link" href="write.html">Write another →</a></div>
+      <div id="my-stories" class="story-grid"></div>
+    </section>
+  </main>
+
+  <nav class="mobile-nav" aria-label="Primary navigation">
+    <a href="profile.html" data-nav="profile"><span>○</span><small>Profile</small></a>
+    <a href="write.html" data-nav="write"><span>＋</span><small>Write</small></a>
+    <a href="saved.html" data-nav="saved"><span>♡</span><small>Saved</small></a>
+  </nav>
+
+  <div id="edit-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="edit-title">
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <p class="eyebrow">PROFILE</p><h2 id="edit-title">Make it yours.</h2>
+      <form id="profile-form">
+        <label>Username<input id="edit-username" required maxlength="30"></label>
+        <label>Bio<textarea id="edit-bio" rows="4" maxlength="140"></textarea></label>
+        <button class="button button-primary button-full" type="submit">Save profile</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>
