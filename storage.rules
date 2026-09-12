@@ -1,0 +1,21 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /profilePhotos/{userId}/{fileName} {
+      // Profile photos are public because story cards need to display them.
+      allow read: if true;
+
+      // Only the owner may upload/replace their own profile photo.
+      // Limit uploads to 5 MB and image MIME types.
+      allow create, update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+
+      // Only the owner may delete their own profile photo.
+      allow delete: if request.auth != null
+        && request.auth.uid == userId;
+    }
+  }
+}

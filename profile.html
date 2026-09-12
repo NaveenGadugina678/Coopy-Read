@@ -13,16 +13,19 @@
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="profile.html" data-nav="profile">Profile</a><a href="write.html" data-nav="write">Write</a><a href="saved.html" data-nav="saved">Saved</a>
     </nav>
-    <div class="top-actions"><span id="auth-chip" class="auth-chip">Demo mode</span><button id="auth-action" class="button button-small button-outline" type="button">Log in</button></div>
+    <div class="top-actions"><span id="auth-chip" class="auth-chip">Not signed in</span><button id="auth-action" class="button button-small button-outline" type="button">Log in</button></div>
   </header>
 
   <main class="content-page profile-page">
     <section id="profile-hero" class="profile-hero">
-      <div class="profile-avatar avatar-placeholder">M</div>
+      <div id="profile-avatar" class="profile-avatar avatar-placeholder">
+        <img id="profile-photo" class="hidden" alt="">
+        <span id="profile-initials">R</span>
+      </div>
       <div class="profile-copy">
         <p class="eyebrow">YOUR READING ROOM</p>
-        <h1 id="profile-name">Maya Chen</h1>
-        <p id="profile-bio">Writing tiny stories about ordinary lives.</p>
+        <h1 id="profile-name">Reader</h1>
+        <p id="profile-bio">A quiet corner for stories.</p>
         <div class="profile-stats">
           <span><strong id="story-count">0</strong> stories</span>
           <span><strong id="saved-count">0</strong> saved</span>
@@ -48,6 +51,17 @@
       <button class="modal-close" data-close-modal aria-label="Close">×</button>
       <p class="eyebrow">PROFILE</p><h2 id="edit-title">Make it yours.</h2>
       <form id="profile-form">
+        <div class="profile-photo-editor">
+          <img id="photo-preview" class="profile-photo-preview hidden" alt="New profile photo preview">
+          <div>
+            <label class="photo-picker">
+              <span>Choose profile photo</span>
+              <input id="profile-photo-input" type="file" accept="image/*">
+            </label>
+            <small id="photo-name">No new photo selected</small>
+            <p class="photo-help">JPG, PNG, WEBP or another image type · max 5 MB.</p>
+          </div>
+        </div>
         <label>Username<input id="edit-username" required maxlength="30"></label>
         <label>Bio<textarea id="edit-bio" rows="4" maxlength="140"></textarea></label>
         <button class="button button-primary button-full" type="submit">Save profile</button>

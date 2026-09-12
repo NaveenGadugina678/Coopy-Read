@@ -61,18 +61,27 @@ function updateAuthUI(){
 async function loadStories(){
   if (!isConfigured) {
     state.stories = shuffle([...DEMO_STORIES]);
-    return;
+  } else {
+    try {
+      const q = query(
+        collection(db, "stories"),
+        where("published", "==", true),
+        orderBy("createdAt", "desc"),
+        limit(40)
+      );
+      const snap = await getDocs(q);
+      state.stories = shuffle(snap.docs.map(d => ({ id: d.id, ...d.data() })));
+
+      if (!state.stories.length) {
+        toast("No published stories yet. Be the first to write one.");
+      }
+    } catch (error) {
+      console.error("FIRESTORE STORY LOAD ERROR:", error);
+      state.stories = [];
+      toast("Couldn't load published stories. Check Firebase and try again.");
+    }
   }
-  try {
-    const q = query(collection(db, "stories"), where("published","==",true), orderBy("createdAt","desc"), limit(40));
-    const snap = await getDocs(q);
-    state.stories = shuffle(snap.docs.map(d => ({id:d.id, ...d.data()})));
-    if (!state.stories.length) state.stories = shuffle([...DEMO_STORIES]);
-  } catch (error) {
-    console.warn("Firestore unavailable; using demo stories.", error);
-    state.stories = shuffle([...DEMO_STORIES]);
-    toast("Using demo stories while the database is unavailable.");
-  }
+
   const unseen = state.stories.filter(s => !state.sessionSeen.has(s.id));
   state.queue = unseen.length ? unseen : state.stories;
 }
